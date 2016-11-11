@@ -24,10 +24,27 @@ class Auth extends CI_Controller {
 	 */
 	public function index()
 	{
+		if($this->session->userdata('role') == 1)
+			{
+				redirect('super');
+			}
+			elseif($this->session->userdata('role') == 2)
+			{
+				redirect('user');
+			}
+			elseif($this->session->userdata('role') == 'user')
+			{
+				redirect('user');
+			}
+                        $data=$this->load->view('login');
+		}
 		
-		$data=$this->load->view('login');
+			
 
-	}
+		
+		
+
+	
 	 public function cek()
 	{
 		$nip = $this->input->post('username');

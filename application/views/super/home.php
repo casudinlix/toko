@@ -1,41 +1,39 @@
-<div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <h1>
-         
-        <small></small>
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-         
-      </ol>
-    </section>
-
-    <!-- Main content -->
-    <section class="content">
-  <?php 
-
-
-  echo $cek['kd_produk'];?>
-      <!-- Default box -->
-      <div class="box">
-        <div class="box-header with-border">
-         <div class="box-body">
-              <div class="alert alert-danger alert-dismissible">
-                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                <h4><i class="icon fa fa-ban"></i> Peringatan!</h4>
-                Data STOCK Yang Kurang Dari 12 PCS Berikut Silahkan lakukan Order Kembali
+<!-- page content -->
+        <div class="right_col" role="main">
+          <div class="">
+            <div class="page-title">
+              <div class="title_left">
+                <h3></h3>
               </div>
 
-          <div class="box-tools pull-right">
-            <button type="button" class="btn btn-box-tool">
-               </button>
-            <button type="button" class="btn btn-box-tool">
-               </button>
-          </div>
-        </div>
-        <div class="box-body">
-        <table class="table table-bordered table-striped" id="alert">
+              <div class="title_right">
+                 
+              </div>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2><font color="red">Data Stock Yang Kurang Dari 12</font></h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      <li class="dropdown">
+                         
+                        <ul class="dropdown-menu" role="menu">
+                          
+                          s
+                        </ul>
+                      </li>
+                       
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                      <table class="table table-bordered table-striped" id="alert">
                                <thead bgcolor="#eeeeee" align="center">
                                   <tr>
 
@@ -54,25 +52,9 @@
                                   <tbody>
                                   </tbody>
                               </table>
-
-                             <h3 class="box-title"></h3>
+                  </div>
+                </div>
+              </div>
             </div>
-    </section>  
-        
-
-
+          </div>
         </div>
-        <!-- /.box-body -->
-        <div class="box-footer">
-          Footer
-        </div>
-        <!-- /.box-footer-->
-      </div>
-      <!-- /.box -->
-
-    </section>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
-
-

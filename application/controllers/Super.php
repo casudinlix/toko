@@ -20,15 +20,16 @@ class Super extends CI_Controller{
 		$d['nama_user'] = $this->session->userdata('nama_user');
 		
 		$this->load->view('super/atas', $d);
-//ini untuk konten
-		$cek=$this->db->get_where("tt_stock",array('stock'<=12))->result();
-//$cek =$this->db->select("kd_produk");
-		//$cek['stock']=$this->db->or_where("stock <=12 ");
-		//$cek['stock1']=$this->db->or_where("stock <>0 ");
+	//ini untuk konten
+		//$cek['sisa']=$this->db->get_where('tt_stock',array('stock'<=12))->result();
+		//$this->db->select("kd_produk");
+		$this->db->where("stock <=12 ");
+		//$this->db->or_where("stock <>0 ");
+		$cek=$this->db->get('tt_stock');
 
-
-
-$this->load->view('super/home',$cek);
+		$row = $cek->result();
+		
+		$this->load->view('super/home');
 
 
 
@@ -91,6 +92,55 @@ echo json_encode(
         }
 	}
 
-	//tempat function lain
+	function harga(){
+		$d['nama_user'] = $this->session->userdata('nama_user');
+		$this->load->view('super/atas', $d);
+		$this->load->view("super/config/harga");
+		$this->load->view('super/bawah',$d);
+
+	}
+	function setting_harga(){
+		$this->load->model('model_master_produk');
+	$kd_produk = $this->uri->segment(3);
+	$data['produk'] = $this->model_master_produk->produk($kd_produk)->row_array();
+
+		$d['nama_user'] = $this->session->userdata('nama_user');
+		$this->load->view('super/atas', $d);
+		$this->load->view("super/config/setting_harga",$data);
+		$this->load->view('super/bawah',$d);
+
+	}
+	function item(){
+		$d['nama_user'] = $this->session->userdata('nama_user');
+		$this->load->view('super/atas', $d);
+		$this->load->view("super/config/item");
+		$this->load->view('super/bawah',$d);
+
+	}
+	function setting_item(){
+		$d['nama_user'] = $this->session->userdata('nama_user');
+		$this->load->model('model_master_produk');
+		$d['jenis']= $this->model_master_produk->jenis();
+		$kd_produk = $this->uri->segment(3);
+		$data['produk'] = $this->model_master_produk->produk($kd_produk)->row_array();
+
+
+		$this->load->view('super/atas', $d);
+		$this->load->view("super/config/setting_item",$data,$d);
+		$this->load->view('super/bawah',$d);
+
+	}
+	function tambah_item(){
+		$d['nama_user'] = $this->session->userdata('nama_user');
+
+		$this->load->model('model_master_produk');
+		$d['kode'] = $this->model_master_produk->kode_item();
+		$d['jenis']= $this->model_master_produk->jenis();
+		$this->load->view('super/atas', $d);
+		$this->load->view("super/config/tambah_item",$d);
+		$this->load->view('super/bawah',$d);
+
+
+	}
 
 }
