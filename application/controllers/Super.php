@@ -164,4 +164,16 @@ $d['nama_user'] = $this->session->userdata('nama_user');
 		$this->load->view("super/config/edit_profil",$data,$d);
 		$this->load->view('super/bawah',$d);
 }
+function user(){
+	$d['nama_user'] = $this->session->userdata('nama_user');
+
+		$this->load->model('model_master_produk');
+		$d['user'] = $this->model_master_produk->user();
+		//$d['jenis']= $this->model_master_produk->jenis();
+		$this->load->view('super/atas', $d);
+		$this->load->view("super/config/user",$d);
+		$this->load->view('super/bawah',$d);
+
+}
+
 }

@@ -29,4 +29,9 @@ function edit_profil1($id){
 	return $this->db->get_where('profil', array('id' => $id));
 
 }
+function user(){
+	$result = $this->db->get_where('users',array('role'=> 2))->result();
+		return $result;
+
+}
 }

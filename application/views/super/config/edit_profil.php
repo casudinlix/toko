@@ -99,7 +99,7 @@
 
 
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="email" id="email" name="hargajual" required="required"  class="form-control col-md-7 col-xs-12" value="<?php echo $profil['email']?>" >
+                          <input type="email" id="email" name="email" required="required"  class="form-control col-md-7 col-xs-12" value="<?php echo $profil['email']?>" >
                         </div>
                       </div>
                       <div class="ln_solid"></div>

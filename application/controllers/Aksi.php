@@ -73,6 +73,15 @@ echo $s;
 
 }
 function update_profil(){
+	if (empty($_POST)) {
+		# code...
+		$s = "<script>
+  alert('Akses Di tolak');
+</script>";
+echo "<script language='JavaScript'>top.location='javascript:history.go(-1)'; </script> ";
+echo $s;  
+die();   
+	}else{
 	$id=$this->input->post('id');
 	$nama=$this->input->post('nama');
 	$alamat=$this->input->post('alamat');
@@ -97,7 +106,7 @@ $s = "<script>
 </script>";
 echo "<script language='JavaScript'>top.location='javascript:history.go(-2)'; </script> ";
 echo $s;     
-
+}
 }
 
 
