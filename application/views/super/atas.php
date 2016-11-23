@@ -98,7 +98,7 @@
                     <ul class="nav child_menu">
                       <li><a href="<?php echo site_url('super/harga');?>"><i class="fa fa-money faa-tada animated"></i> Harga</a></li>
             <li><a href="<?php echo site_url('super/item');?>"><i class="fa fa-cube faa-tada animated"></i> Item</a></li>
-            <li><a href="?page=config-profil"><i class="fa fa-building  faa-tada animated"></i> Profil</a></li>
+            <li><a href="<?php echo site_url('super/profil');?>"><i class="fa fa-building  faa-tada animated"></i> Profil</a></li>
              <li><a href="?page=config-user"><i class="fa fa-users  faa-tada animated"></i> User Pengguna</a></li>
              <li><a href="?page=config-jenis"><i class="fa fa-dropbox  faa-tada animated"></i> Jenis Item</a></li>
              <li><a href="?page=config-lokasi"><i class="fa fa-location-arrow  faa-tada animated"></i> Lokasi</a></li>

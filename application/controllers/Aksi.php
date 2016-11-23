@@ -72,5 +72,33 @@ echo $s;
 
 
 }
+function update_profil(){
+	$id=$this->input->post('id');
+	$nama=$this->input->post('nama');
+	$alamat=$this->input->post('alamat');
+	$kota=$this->input->post('kota');
+	$tlp=$this->input->post('tlp');
+	$fax=$this->input->post('fax');
+	$email=$this->input->post('email');
+
+$update=array('koperasi'=>$nama,
+	'alamat'=>$alamat,
+	'kota'=>$kota,
+	'tlp'=>$tlp,
+	'fax'=>$fax,
+	'email'=>$email);
+
+
+$this->db->where('id',$id);
+$this->db->update('profil',$update);
+
+$s = "<script>
+  alert('Update Data Berhasil');
+</script>";
+echo "<script language='JavaScript'>top.location='javascript:history.go(-2)'; </script> ";
+echo $s;     
+
+}
+
 
 }

@@ -54,7 +54,7 @@ $columns = array(
 	array( 'db' => '`u`.`jenis_produk`',   'dt' => 2, 'field' => 'jenis_produk' ),
 	array( 'db' => '`ud`.`stock`',     'dt' => 3, 'field' => 'stock'),
 	array( 'db' => '`ud`.`lokasi`',     'dt' => 4, 'field' => 'lokasi'),
-	array( 'db' => 'sum(`ud`.`stock`)',     'dt' => 5, 'field' => 'stock','as' =>'stock')
+	array( 'db' => '`ud`.`stock`',     'dt' => 5, 'field' => 'stock','as' =>'stock')
 	
 );
 // SQL server connection information
@@ -142,5 +142,26 @@ echo json_encode(
 
 
 	}
+	function profil(){
+		$d['nama_user'] = $this->session->userdata('nama_user');
 
+		$this->load->model('model_master_produk');
+		$d['profil'] = $this->model_master_produk->profil();
+		//$d['jenis']= $this->model_master_produk->jenis();
+		$this->load->view('super/atas', $d);
+		$this->load->view("super/config/profil",$d);
+		$this->load->view('super/bawah',$d);
+
+	}
+	function edit_profil(){
+		$this->load->model('model_master_produk');
+		$d['jenis']= $this->model_master_produk->profil();
+		$id = $this->uri->segment(3);
+		$data['profil'] = $this->model_master_produk->edit_profil1($id)->row_array();
+$d['nama_user'] = $this->session->userdata('nama_user');
+
+		$this->load->view('super/atas', $d);
+		$this->load->view("super/config/edit_profil",$data,$d);
+		$this->load->view('super/bawah',$d);
+}
 }
