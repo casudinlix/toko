@@ -1,6 +1,6 @@
-<?php 
+<?php
 defined('BASEPATH') or exit('No direct script access allowed');
-
+include(FCPATH."config1.php");
 class Ajax extends CI_Controller{
 	function __construct(){
 		parent::__construct();
@@ -36,15 +36,15 @@ $columns = array(
 
 
 
-	
+
 );
 // SQL server connection information
 
 $sql_details = array(
-	'user' => 'root',
-	'pass' => 'bintang',
-	'db'   => 'toko',
-	'host' => 'localhost'
+	'user' => "root",
+	'pass' => "bintang",
+	'db'   => "toko",
+	'host' => "localhost"
 );
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -63,7 +63,7 @@ echo json_encode(
 );
 
 
-		
+
 
 
 
@@ -82,7 +82,7 @@ function item(){
 	$this->load->library('ssp');
 
 $table = 'm_produk';
-	
+
 // Table's primary key
 $primaryKey = 'kd_produk';
 
@@ -98,7 +98,7 @@ $columns = array(
 
 
 
-	
+
 );
 // SQL server connection information
 
@@ -125,7 +125,7 @@ echo json_encode(
 );
 
 
-		
+
 
 
 }

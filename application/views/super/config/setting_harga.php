@@ -9,7 +9,7 @@
               <div class="title_right">
                 <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
                   <div class="input-group">
-                     
+
                   </div>
                 </div>
               </div>
@@ -27,10 +27,10 @@
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
                       <li class="dropdown">
-                         
+
                         </ul>
                       </li>
-                       
+
                     </ul>
                     <div class="clearfix"></div>
                   </div>
@@ -38,7 +38,7 @@
 
  <form class="form-horizontal form-label-left" novalidate method="post" action="<?php echo site_url('aksi/update_harga')?>">
 
-                      
+
 
                       <div class="item form-group">
                         <?php echo form_hidden('kd_produk', $this->uri->segment(3));?>
@@ -51,16 +51,16 @@
                         </div>
                       </div>
 
-                        
+
                       </div>
-                      
-                      
+
+
                       <div class="item form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="number">Harga Beli <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
 
-                          <input type="number" id="number" name="hargabeli" required="required" data-validate-minmax="1000" class="form-control col-md-7 col-xs-12"  value="<?php echo $produk['harga_beli']?>">
+                          <input type="number"  name="hargabeli" required="required" data-validate-minmax="1000" class="form-control col-md-7 col-xs-12"  value="<?php echo $produk['harga_beli']?>">
                         </div>
                       </div>
                       <div class="item form-group">
@@ -72,11 +72,11 @@
                           <input type="number" id="number" name="hargajual" required="required" data-validate-minmax="1000" class="form-control col-md-7 col-xs-12" value="<?php echo $produk['harga_jual']?>" >
                         </div>
                       </div>
-                     
+
                       <div class="ln_solid"></div>
                       <div class="form-group">
                         <div class="col-md-6 col-md-offset-3">
-     
+
                           <input id="send" type="submit" class="btn btn-success" value="Update">
                         </div>
                       </div>

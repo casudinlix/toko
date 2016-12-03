@@ -2,7 +2,7 @@
         <!-- footer content -->
         <footer>
           <div class="pull-right">
-            Rumah Kreaasi 
+            Rumah Kreaasi
           </div>
           <div class="clearfix"></div>
         </footer>
@@ -19,7 +19,7 @@
 <script src="<?php echo base_url();?>asset/plugins/slimScroll/jquery.slimscroll.min.js"></script>
 <!-- FastClick -->
 <script src="<?php echo base_url();?>asset/plugins/fastclick/fastclick.js"></script>
- 
+
 
 <script src="<?php echo base_url();?>asset/js/jquery-1.12.3.js" type="text/javascript"></script>
 <!-- Animasi-->
@@ -42,7 +42,7 @@
 <!-- FastClick -->
 
 <script src="<?php echo base_url();?>asset/plugins/fastclick/fastclick.js"></script>
- 
+
 <script src="<?php echo base_url();?>asset/js/jquery.dataTables.js"></script>
 
 <script src="<?php echo base_url();?>asset/js/dataTables.bootstrap.js"></script>
@@ -50,18 +50,18 @@
  <script type="text/javascript" language="javascript" src="<?php echo base_url();?>asset/js/jquery.dataTables.js"></script>
 
 <script type="text/javascript" language="javascript" src="<?php echo base_url();?>asset/js/dataTables.tableTools.js"></script>
- 
+
 <script type="text/javascript" language="javascript" src="<?php echo base_url();?>asset/js/dataTables.foundation.min.js"></script>
 
 
 
- 
+
 
 <script type="text/javascript" language="javascript" src="<?php echo base_url();?>asset/js/dataTables.bootstrap.js"></script>
  <script type="text/javascript" language="javascript" src="<?php echo base_url();?>asset/js/dataTables.bootstrap.min.js"></script>
 
 
- 
+
   <script type="text/javascript" src="<?php echo base_url();?>asset/js/ZeroClipboard.js"></script>
  <script src="<?php echo base_url();?>asset/js/dataTables.buttons.min.js" type="text/javascript"></script>
  <script src="<?php echo base_url();?>asset/js/buttons.flash.min.js" type="text/javascript"></script>
@@ -76,12 +76,12 @@
 <script src="<?php echo base_url();?>asset/plugins/pace/pace.min.js"></script>
 <script src="<?php echo base_url();?>asset/js/bootstrap.min.js"></script>
  <script src="<?php echo base_url();?>asset/js/qunit.js"></script>
-  
- 
-      
 
 
-   
+
+
+
+
 
   <script src="<?php echo base_url();?>asset/vendors/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap -->
@@ -150,14 +150,14 @@
 
 
 <!--Untuk Form Validasi-->
- 
+
 <script>
   $(document).ready(function() {
    $('#alert').DataTable( {
         "processing": true,
         "serverSide": true,
         "ajax": "<?php echo site_url('super/alert'); ?>",
-         
+
 
         } );
 } );
@@ -168,7 +168,7 @@
         "processing": true,
         "serverSide": true,
         "ajax": "<?php echo site_url('ajax/item'); ?>",
-         
+
 
         } );
 } );

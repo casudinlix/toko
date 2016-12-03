@@ -1,10 +1,10 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-
+include(FCPATH."config1.php");
 class Super extends CI_Controller{
 	function __construct(){
 		parent::__construct();
-		
+
 		if ($this->session->userdata('role') <> 1) {
 			redirect('auth');
 		}
@@ -13,12 +13,12 @@ class Super extends CI_Controller{
 
 
 	public function index(){
-		
 
-		
-		
+
+
+
 		$d['nama_user'] = $this->session->userdata('nama_user');
-		
+
 		$this->load->view('super/atas', $d);
 	//ini untuk konten
 		//$cek['sisa']=$this->db->get_where('tt_stock',array('stock'<=12))->result();
@@ -28,7 +28,7 @@ class Super extends CI_Controller{
 		$cek=$this->db->get('tt_stock');
 
 		$row = $cek->result();
-		
+
 		$this->load->view('super/home');
 
 
@@ -55,7 +55,7 @@ $columns = array(
 	array( 'db' => '`ud`.`stock`',     'dt' => 3, 'field' => 'stock'),
 	array( 'db' => '`ud`.`lokasi`',     'dt' => 4, 'field' => 'lokasi'),
 	array( 'db' => '`ud`.`stock`',     'dt' => 5, 'field' => 'stock','as' =>'stock')
-	
+
 );
 // SQL server connection information
 
@@ -82,7 +82,7 @@ echo json_encode(
 );
 
 
-		
+
 
 
 
@@ -173,6 +173,16 @@ function user(){
 		$this->load->view('super/atas', $d);
 		$this->load->view("super/config/user",$d);
 		$this->load->view('super/bawah',$d);
+
+}
+function tambah_user(){
+		$d['nama_user'] = $this->session->userdata('nama_user');
+		$d['user'] = $this->model_master_produk->user();
+		//$d['jenis']= $this->model_master_produk->jenis();
+		$this->load->view('super/atas', $d);
+		$this->load->view("super/config/tambah_user",$d);
+		$this->load->view('super/bawah',$d);
+
 
 }
 
