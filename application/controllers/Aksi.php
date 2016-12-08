@@ -1,4 +1,4 @@
-<?php 
+<?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
 class Aksi extends CI_Controller{
@@ -29,7 +29,7 @@ $s = "<script>
   alert('Update Data Berhasil');
 </script>";
 echo "<script language='JavaScript'>top.location='javascript:history.go(-2)'; </script> ";
-echo $s;     
+echo $s;
 	}
 
 	//tempat function lain
@@ -50,7 +50,7 @@ $s = "<script>
   alert('Update Data Berhasil');
 </script>";
 echo "<script language='JavaScript'>top.location='javascript:history.go(-2)'; </script> ";
-echo $s;     
+echo $s;
 
 }
 
@@ -67,7 +67,7 @@ $this->db->insert('m_produk',$insert);
   alert('Insert Data Berhasil');
 </script>";
 echo "<script language='JavaScript'>top.location='javascript:history.go(-2)'; </script> ";
-echo $s;     
+echo $s;
 
 
 
@@ -79,8 +79,8 @@ function update_profil(){
   alert('Akses Di tolak');
 </script>";
 echo "<script language='JavaScript'>top.location='javascript:history.go(-1)'; </script> ";
-echo $s;  
-die();   
+echo $s;
+die();
 	}else{
 	$id=$this->input->post('id');
 	$nama=$this->input->post('nama');
@@ -105,8 +105,51 @@ $s = "<script>
   alert('Update Data Berhasil');
 </script>";
 echo "<script language='JavaScript'>top.location='javascript:history.go(-2)'; </script> ";
-echo $s;     
+echo $s;
 }
+}
+function tambah_user(){
+	if (empty($_POST)) {
+		# code...
+		$s = "<script>
+  alert('Akses Di tolak');
+</script>";
+echo "<script language='JavaScript'>top.location='javascript:history.go(-1)'; </script> ";
+echo $s;
+die();
+	}else{
+		$usr=$this->input->post('username');
+		$nama=$this->input->post('nama');
+		$pas=md5($this->input->post('pass'));
+		$role=$this->input->post('role');
+
+		$d=array('username'=>$usr,
+	'nama_user'=>$nama,'pass'=>$pas,'role'=>$role);
+	$this->db->insert('users',$d);
+
+		 $s = "<script>
+	  alert('Insert Data Berhasil');
+	</script>";
+	echo "<script language='JavaScript'>top.location='javascript:history.go(-2)'; </script> ";
+	echo $s;
+
+	}
+	function update_user(){
+		if (empty($_POST)) {
+			# code...
+			$s = "<script>
+	  alert('Akses Di tolak');
+	</script>";
+	echo "<script language='JavaScript'>top.location='javascript:history.go(-1)'; </script> ";
+	echo $s;
+	die();
+		}else{
+
+
+			
+	}
+}
+
 }
 
 

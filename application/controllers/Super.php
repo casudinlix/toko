@@ -177,7 +177,7 @@ function user(){
 }
 function tambah_user(){
 		$d['nama_user'] = $this->session->userdata('nama_user');
-		$d['user'] = $this->model_master_produk->user();
+		//$d['user'] = $this->model_master_produk->user();
 		//$d['jenis']= $this->model_master_produk->jenis();
 		$this->load->view('super/atas', $d);
 		$this->load->view("super/config/tambah_user",$d);
@@ -185,5 +185,20 @@ function tambah_user(){
 
 
 }
+function setting_user(){
+	$this->load->model('model_master_produk');
+	$d['user']= $this->model_master_produk->user();
+	$id = $this->uri->segment(3);
+	$d['username'] = $this->model_master_produk->edit_user($id)->row_array();
+		$d['nama_user'] = $this->session->userdata('nama_user');
+		//$d['user'] = $this->model_master_produk->user();
+		//$d['jenis']= $this->model_master_produk->jenis();
+		$this->load->view('super/atas', $d);
+		$this->load->view("super/config/setting_user",$d);
+		$this->load->view('super/bawah',$d);
+
+
+}
+
 
 }

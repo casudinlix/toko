@@ -11,13 +11,13 @@ class Model_master_produk extends CI_Model{
 		return $result;
 	}
 	function kode_item(){
-		$create = strtoupper(uniqid(rand(),true)); 
+		$create = strtoupper(uniqid(rand(),true));
     $s='SB.';
     $d=date('Y');
     $b=date('m');
     $h=date('d');
     $style = $s.$d.$b.$h.substr($create,0,3);
-        
+
     return $style;
 }
 function profil(){
@@ -33,5 +33,9 @@ function user(){
 	$result = $this->db->get_where('users',array('role'=> 2))->result();
 		return $result;
 
+}
+function edit_user($id)
+{
+	return $this->db->get_where('users', array('id' => $id));
 }
 }

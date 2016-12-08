@@ -189,5 +189,16 @@
     } );
 } );
 </script>
+<script>
+  $(document).ready(function() {
+   $('#user').DataTable( {
+        "processing": true,
+        "serverSide": true,
+        "ajax": "<?php echo site_url('ajax/user'); ?>",
+
+
+        } );
+} );
+</script>
 </body>
 </html>
